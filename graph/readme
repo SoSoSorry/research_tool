@@ -1,0 +1,21 @@
+#2022.10.02
+1.the script of env setting
+python3, matplotlib
+
+2.the script of initial the file 
+3.execution,clean, help, ...
+
+
+execute the draw.sh and generate these results.
+
+
+other dir and file:
+	fortio.sh : handle the fortio data
+	bar.sh: draw bar
+	plot.sh: draw plot
+	bar_add.sh: draw CPU utilization superimposition diagram
+	data: store the original data
+	result_20220927: the latest graphic result
+
+modification:
+        ...

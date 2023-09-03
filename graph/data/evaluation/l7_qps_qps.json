@@ -1,0 +1,9 @@
+{
+  "setting" : {"xlabel":"request / qps", "ylabel": "respond / qps", "y_upper_limitation": 35000},
+  "label_list" :  ["100", "1000", "10000", "100000"],
+  "data" :  [{"name":"local envoy", "data":[99.78, 999.88, 4421.26, 4423.14]},
+             {"name":"local FlatProxy", "data":[100, 999.88, 9997.96, 34117.06]},
+             {"name":"remote envoy", "data":[99.94, 999.82, 4194.06, 4171.76]},
+             {"name":"remote FlatProxy", "data":[100, 999.88, 9998.1, 21631.94]}]
+}
+

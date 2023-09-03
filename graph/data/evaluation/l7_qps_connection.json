@@ -1,0 +1,8 @@
+{
+  "setting" : {"xlabel":"connections", "ylabel": "respond / qps", "y_upper_limitation": 120000},
+  "label_list" :  ["1", "2", "3", "4", "5"],
+  "data" : [ {"name":"local envoy", "data":[4399.8, 6762.84, 8001.02, 7932.72, 8187.18 ]},
+             {"name":"local FlatProxy", "data":[34151.86, 61145.54, 62608.7, 63981.82, 64487.1]},
+             {"name":"remote envoy", "data":[4130.8, 6322.82, 7766.62, 7992.56, 8002.98]},
+             {"name":"remote FlatProxy", "data":[21966.08, 42994.24, 54877.52, 62331.68, 63185.3]}]
+}

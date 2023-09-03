@@ -1,0 +1,11 @@
+{
+  "setting" : {"xlabel":"connections", "ylabel": "throughput / Gb/s", "y_upper_limitation": 70},
+  "label_list" :  ["1", "2", "4", "8", "16", "32", "64"],
+  "data" : [ {"name":"local envoy", "data":[22.18, 19.12, 17.4, 16.56, 16.62, 16.72, 16.34]},
+             {"name":"local FlatProxy", "data":[53.8, 54.22, 54.08, 53.96, 53.56, 53, 52.06 ]},
+             {"name":"remote envoy", "data":[17.26, 15.88, 13.3, 12.86, 12.86, 12.58, 11.78]},
+             {"name":"remote FlatProxy", "data":[23.4, 23.5, 23.5, 23.5, 23.5, 23.46, 23.34 ]}]
+
+}
+
+

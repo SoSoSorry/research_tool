@@ -1,0 +1,9 @@
+{
+  "setting" : {"xlabel":"request / qps", "ylabel": "99% latency / ms", "y_upper_limitation":2},
+  "label_list" :  ["100", "1000", "10000", "100000"],
+  "data": [{"name":"local envoy", "data":[1.978, 0.946, 0.988, 0.99]},
+          {"name":"local FlatProxy", "data":[0.729, 0.6912, 0.99, 0.99]},
+	  {"name":"remote envoy", "data":[1.972, 0.95, 0.952, 0.99]},
+	  {"name":"remote FlatProxy", "data":[0.8, 0.604, 0.478, 0.924]}]
+}
+

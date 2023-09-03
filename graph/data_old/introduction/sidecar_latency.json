@@ -1,0 +1,7 @@
+{
+  "setting" : {"xlabel":"packet size / bytes", "ylabel": "latency / us", "y_upper_limitation": 120},
+  "label_list" :  ["32", "64", "128", "256", "512", "1024", "2048"],
+  "data" : [{"name":"no-serviceMesh", "data":[37.395, 36.358, 34.769, 33.608, 41.49, 43.822, 42.339 ]},
+  	    {"name":"serviceMesh", "data":[90.3194, 100.7754, 91.1706, 89.18, 87.8906, 85.734, 98.2228]}]
+}
+
