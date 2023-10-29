@@ -1,0 +1,32 @@
+TS:traffic size
+T: thread
+C: cpu
+file name format: num.condition1_condition2_variable.sh (1.1T_1C_TS.sh)  
+
+### The performance varying by core
+sudo taskset -c 1 ./0.envoy.sh server/client
+sudo ./1.1core.sh server/client
+
+sudo taskset -c 1-2 ./0.envoy.sh server/client
+sudo ./2.2core.sh server/client
+
+sudo taskset -c 1-4 ./0.envoy.sh server/client
+sudo ./3.4core.sh server/client
+
+sudo taskset -c 1-8 ./0.envoy.sh server/client
+sudo ./4.8core.sh server/client
+
+sudo taskset -c 1-16 ./0.envoy.sh server/client
+sudo ./5.16core.sh server/client
+
+sudo taskset -c 1-32 ./0.envoy.sh server/client
+sudo ./6.32core.sh server/client
+
+## single core, single connection
+sudo taskset -c 1 ./1.test_1T_1C_TS.sh server/client
+
+## max core, max traffic size
+sudo ./2.test_maxTS_maxC_T.sh  server/client
+
+## max traffic size, max thread
+sudo 3.test_maxTS_maxT_C.sh server/client

@@ -1,0 +1,3 @@
+iperf.sh ip port [namespace]
+sockperf.sh ip port [namespace]
+fortio.sh ip port [namespace]

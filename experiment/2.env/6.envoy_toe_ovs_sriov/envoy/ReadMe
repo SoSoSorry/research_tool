@@ -1,0 +1,1 @@
+envoy_start app server/client config_path [namespace]

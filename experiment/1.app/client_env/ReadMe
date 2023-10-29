@@ -1,0 +1,26 @@
+### The throughput( or PPS) over varying traffic size.  
+1.iperf3_TS.sh ip port thread min_traffic_size max_traffic_size [namespace]
+
+### The throughput( or PPS) over varying connection.
+2.iperf3_C.sh ip port during_time thread_min thread_max [namespace]
+
+### The latency over varying message size.
+3.sockperf_MS.sh ip port thread min_msg_size max_msg_size [namespace]
+
+### The respond qps / average latency over varying qps size.
+4.fortio_qps.sh ip port thread min_qps max_qps time [namespace]
+
+### The long tail latency distribution.
+5.fortio_longtail.sh ip port thread qps json_file time [namespace]
+
+### The respond qps over varying connection.
+6.fortio_T.sh ip port qps thread_min thread_max time [namespace]
+
+### The throughput over varying cpu cores.
+7.iperf3_multiC.sh ip port during_time core_min core_max thread [namespace]
+
+### The respond qps / average latency over varying qps size.
+8.fortio_multiC.sh ip port thread min_core max_core qps time [namespace]
+
+### The jtter(server), loss packet over varying pps
+9.iperf3_udp_pps.sh ip port thread min_bandwidth max_bandwidth [namespace]

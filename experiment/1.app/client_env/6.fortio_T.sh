@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "------ $0 ------"
+echo "the number of parameter: $#"
+if [ $# -lt 5 ]; then                # ';' is  the end handle.
+  echo "error: lack of parameters"
+  echo "------ $0 ------"
+  exit 1
+fi
+ip=$1 # 192.168.200.1
+port=$2 # 9509
+qps=$3
+
+min_thread=$4
+max_thread=$5
+during_time=$6
+#generate the packets;
+for (( i=$min_thread; i<=$max_thread; i*=2 )); do
+  echo " "
+  echo -e "\033[43;37m ------ connection: $i ------ \033[0m"
+  if [ $# == 5 ]; then
+    echo "fortio load -c $i -qps $qps  -t $during_time $ip:$port"
+    fortio load -c $i -qps $qps  -t $during_time $ip:$port
+  else
+    namespace=$7
+    echo "ip netns exec $namespace fortio load -c $i -qps $qps  -t $during_time $ip:$port"
+    ip netns exec $namespace fortio load -c $i -qps $qps  -t $during_time $ip:$port
+  fi
+  echo -e "\033[43;37m ------ connection: $i. End ------ \033[0m"
+done
+
+echo "------ $0 ------"
+
+ 
+

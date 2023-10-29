@@ -1,0 +1,34 @@
+#!/bin/bash
+path=`pwd`
+echo "------ $path/$0 ------"
+if [ $# == 0 ]; then
+  echo "lack of parameters.(server/client)"
+  exit 1
+fi
+
+IP_underlay_s=172.16.2.53
+IP_underlay_c=172.16.2.155
+vxlan_ID=42
+netmask=24
+IP_overlay_s=192.168.200.1
+IP_overlay_c=192.168.200.2
+
+INT_s="enp3s0" #"enp96s0f1np1"
+INT_c="enp4s0" #"ens5f1np1"
+namespace='LM_ns0'
+network_path="../../../../2.env/2.envoy_no_vxlan/network"
+
+if [ $1 == "server" ]; then
+  #$network_path/network_reset.sh
+  $network_path/network_topo.sh $IP_underlay_s $INT_s $netmask $IP_underlay_c $vxlan_ID $IP_overlay_s $netmask
+  ip netns exec $namespace ping $IP_overlay_c -c 5
+elif [ $1 == "client" ]; then
+  #$network_path/network_reset.sh
+  $network_path/network_topo.sh $IP_underlay_c $INT_c $netmask $IP_underlay_s $vxlan_ID $IP_overlay_c $netmask
+  ip netns exec $namespace ping $IP_overlay_s -c 5
+else
+  echo "Mode Error: server/client"
+fi
+
+ifconfig
+echo "------ $path/$0 ------"

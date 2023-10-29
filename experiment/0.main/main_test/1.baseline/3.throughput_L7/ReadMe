@@ -1,0 +1,15 @@
+TS:traffic size
+T: thread
+C: cpu
+file name format: num.condition1_condition2_variable.sh (1.1T_1C_TS.sh)  
+
+sudo taskset ./0.envoy.sh server/client
+
+## single core, single connection
+sudo taskset -c 1 ./1.test_1T_1C_TS.sh server/client
+
+## max core, max traffic size
+sudo ./2.test_maxTS_maxC_T.sh  server/client
+
+## max traffic size, max thread
+sudo 3.test_maxTS_maxT_C.sh server/client

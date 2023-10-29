@@ -1,0 +1,7 @@
+T:thread
+C: cpu core
+TS: traffic size
+
+#call the shell
+sudo 0.envoy.sh [server/client]
+sudo 1.test_1T_1C_TS.sh [server/client]

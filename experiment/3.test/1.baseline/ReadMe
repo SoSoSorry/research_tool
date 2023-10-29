@@ -1,0 +1,2 @@
+sudo env_test.sh server/client
+sudo app_test.sh server/client
